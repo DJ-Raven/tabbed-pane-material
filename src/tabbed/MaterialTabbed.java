@@ -119,6 +119,11 @@ public class MaterialTabbed extends JTabbedPane {
 
         }
 
+        @Override
+        protected void paintTabBackground(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h, boolean isSelected) {
+            if (tabPane.isOpaque()) {
+                super.paintTabBackground(g, tabPlacement, tabIndex, x, y, w, h, isSelected);
+            }
+        }
     }
-
 }
